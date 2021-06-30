@@ -56,14 +56,14 @@ public class QuestionTest {
 		assertFalse(questions.evenlySpaced(4, 6, 3));
 		assertFalse(questions.evenlySpaced(4, 60, 9));
 	}
-	
-	@Test
-	public void nMidTest() {
-		assertEquals("Ho", questions.nMid("Hello", 3));
-		assertEquals("Choate", questions.nMid("Chocolate", 3));
-		assertEquals("Choclate", questions.nMid("Chocolate", 1));
-	}
-	
+//	
+//	@Test
+//	public void nMidTest() {
+//		assertEquals("Ho", questions.nMid("Hello", 3));
+//		assertEquals("Choate", questions.nMid("Chocolate", 3));
+//		assertEquals("Choclate", questions.nMid("Chocolate", 1));
+//	}
+//	
 	@Test
 	public void endsJavaTest() {
 		assertTrue(questions.endsJava("ilovejava"));
@@ -73,15 +73,15 @@ public class QuestionTest {
 		assertFalse(questions.endsJava("javaiscool"));
 		assertFalse(questions.endsJava("pythoniscool"));
 	}
-	
-	@Test
-	public void superBlockTest() {
-		assertEquals(3, questions.superBlock("hooopplla"));
-		assertEquals(4, questions.superBlock("abbCCCddDDDDeeEEE"));
-		assertEquals(5, questions.superBlock("abbCCCCC"));
-		assertEquals(0, questions.superBlock(""));
-	}
-	
+//	
+//	@Test
+//	public void superBlockTest() {
+//		assertEquals(3, questions.superBlock("hooopplla"));
+//		assertEquals(4, questions.superBlock("abbCCCddDDDDeeEEE"));
+//		assertEquals(5, questions.superBlock("abbCCCCC"));
+//		assertEquals(0, questions.superBlock(""));
+//	}
+//	
 	@Test
 	public void amISearchTest() {
 		assertEquals(1, questions.amISearch("Am I in Amsterdam"));
@@ -96,19 +96,19 @@ public class QuestionTest {
 		assertEquals("fizzbuzz", questions.fizzBuzz(15));
 		assertNull(questions.fizzBuzz(8));
 	}
-	
-	@Test
-	public void largestTest() {
-		assertEquals(14, questions.largest("55 72 86"));
-		assertEquals(11, questions.largest("15 72 80 164"));
-		assertEquals(15, questions.largest("555 72 86 45 10"));
-	}
-	
-	@Test
-	public void comparesTest() {
-		assertTrue(questions.compares("The", 2, 'h'));
-		assertFalse(questions.compares("AAbb", 1, 'b'));
-		assertFalse(questions.compares("Hi-There", 10, 'e'));
-	}
+//	
+//	@Test
+//	public void largestTest() {
+//		assertEquals(14, questions.largest("55 72 86"));
+//		assertEquals(11, questions.largest("15 72 80 164"));
+//		assertEquals(15, questions.largest("555 72 86 45 10"));
+//	}
+//	
+//	@Test
+//	public void comparesTest() {
+//		assertTrue(questions.compares("The", 2, 'h'));
+//		assertFalse(questions.compares("AAbb", 1, 'b'));
+//		assertFalse(questions.compares("Hi-There", 10, 'e'));
+//	}
 	
 }

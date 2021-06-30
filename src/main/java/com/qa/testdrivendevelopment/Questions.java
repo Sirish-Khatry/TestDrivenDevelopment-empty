@@ -1,5 +1,8 @@
 package com.qa.testdrivendevelopment;
+import java.util.ArrayList;
+import java.util.Collections;
 
+import org.apache.commons.lang3.StringUtils;
 public class Questions {
 
 	/**
@@ -27,8 +30,18 @@ public class Questions {
 	 * multChar("AAbb") → "AAAAAAbbbbbb"<br>
 	 * multChar("Hi-There") → "HHHiii---TTThhheeerrreee"
 	 */
+		
 	public String multiChar(String input) {
-		return "";
+		
+		String text = "";
+		for(int i = 0; i < input.length(); i++) {
+			char c = input.charAt(i);
+			String text2 = "" + Character.toString(c) + Character.toString(c) + Character.toString(c);
+			text = text.concat(text2);
+		}
+		
+		System.out.println(text);
+		return text;
 	}
 
 	/**
@@ -45,7 +58,22 @@ public class Questions {
 	 */
 
 	public String sandwichFilling(String sandwich) {
-		return "";
+		String org = sandwich.toString().toLowerCase();
+		String reversed = "";
+		String str2 = StringUtils.substringBetween(org, "bread", "bread");
+		
+		if(str2 != null && !str2.trim().isEmpty()) {
+		for (int i = str2.length()-1; i>=0; i--) {
+			reversed = reversed + str2.charAt(i);
+			}
+			return reversed;
+		}
+		else {
+			return reversed = "";
+		}
+		
+//		return "";
+
 	}
 
 	/**
@@ -61,7 +89,27 @@ public class Questions {
 	 * evenlySpaced(4, 60, 9) → false
 	 */
 	public boolean evenlySpaced(int a, int b, int c) {
-		return false;
+		
+		ArrayList<Integer> nums = new ArrayList<>();
+		nums.add(a);
+		nums.add(b);
+		nums.add(c);
+		Collections.sort(nums);
+		int small, medium, large;
+		
+		small = nums.get(0);
+		large = nums.get(2);
+		medium = nums.get(1);
+		
+		int dif1 = medium - small;
+		int dif2 = large - medium;
+		
+		if(dif1 == dif2) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	/**
@@ -76,6 +124,16 @@ public class Questions {
 	 * nMid("Chocolate", 1) → "Choclate"<br>
 	 */
 	public String nMid(String input, int n) {
+		
+		if(input.length() >= n && input.length() % 2 != 0 && n % 2 != 0) {
+			
+			int length = input.length();
+			
+			
+			
+			
+			
+		}
     	return "";
 	}
 
@@ -92,6 +150,13 @@ public class Questions {
 	 * endsJava("pythoniscool") → false <br>
 	 */
 	public boolean endsJava(String input) {
+		
+		String org = input.toString().toLowerCase();
+		
+		if(org.endsWith("java") == true) {
+			return true;
+		}
+		
     	return false;
 	}
 
@@ -107,6 +172,7 @@ public class Questions {
 	 * HINT: "a" == "a" if false HINT: "a".equals("a") is true
 	 */
 	public int superBlock(String input) {
+	
     	return -1;
 	}
 
@@ -123,7 +189,34 @@ public class Questions {
 	 * HINT: String.toLowerCase
 	 */
 	public int amISearch(String sentence) {
-    	return -1;
+		
+		String org = sentence.toString().toLowerCase();
+		int count = 0;
+		int lastIndex = 0;
+		String find = " am ";
+		
+		char first = org.charAt(0);
+		char second = org.charAt(1);
+		char last = org.charAt(org.length()- 1);
+		char secondlast = org.charAt(org.length()- 2);
+		
+		
+		if(first == 'a' && second == 'm') {
+			count ++;
+		}
+		
+		while(lastIndex != -1){
+
+		    lastIndex = org.indexOf(find,lastIndex);
+
+		    if(lastIndex != -1){
+		        count ++;
+		        lastIndex += find.length();
+		    }
+		}
+		
+		System.out.println(count);
+    	return count;
 	}
 
 	/**
@@ -138,7 +231,22 @@ public class Questions {
 	 * fizzBuzz(8) → null
 	 */
 	public String fizzBuzz(int number) {
-    	return "";
+		String word = "";
+    	if(number % 3 == 0 && number % 5 != 0) {
+    		word =  "fizz";
+         	return word;
+    	}
+    	else if(number % 5 == 0 && number % 3 != 0) {
+    		word =  "buzz";
+         	return word;
+    	}
+    	
+    	else if(number % 3 == 0 && number % 5 == 0) {
+    		word = "fizzbuzz";
+         	return word;
+    	}
+    
+     	return word = null;
 	}
 
 	/**
